@@ -11,7 +11,7 @@ This work was developed using:
 * cudatoolkit 10.0.30
 * opencv 4.1.2
 ```
-You can install an environment with all required dependencies using `scangan360.yml` file in Anaconda.
+You can install an environment with all required dependencies using `scangan360.yml` file in Anaconda. 
 
 ## Inference
 The current version of the repository includes a basic, yet functional version to generate scanpaths from a 360º image using the ScanGAN360 model.
@@ -33,3 +33,11 @@ python main.py --mode train
 Make sure you have correctly updated `utils.py`, including all the directories required. Also, check the `data` folder to download the required images and processed gaze data.
 
 Checkpoints and models are saved periodically in the assigned folder.
+
+## Installing Requirements 
+conda create -n scangan360 python=3.7.4
+conda install pytorch=1.2.0 torchvision=0.4.0 torchaudio cudatoolkit=10.0 -c pytorch
+pip install opencv-python==4.1.2.30
+pip install -r requirements.txt
+
+// Download linux driver: https://www.nvidia.com/download/index.aspx?lang=en-us
