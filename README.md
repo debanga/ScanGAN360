@@ -34,10 +34,23 @@ Make sure you have correctly updated `utils.py`, including all the directories r
 
 Checkpoints and models are saved periodically in the assigned folder.
 
+
+## Download Nvidia driver: 
+1. In Ubuntu, check Software & Update app => Additional Software => Select Nvidia Driver and install
+2. After it finishes it will ask to set a password for reboot
+3. After reboot MOK blue window will appear, enter the password in the next steps, and proceed to reboot from the menu
+4. After reboot check installation using `nvidia-smi` command
+
 ## Installing Requirements 
 conda create -n scangan360 python=3.7.4
-conda install pytorch=1.2.0 torchvision=0.4.0 torchaudio cudatoolkit=10.0 -c pytorch
-pip install opencv-python==4.1.2.30
+pip install torch==1.12.0+cu116 torchvision==0.13.0+cu116 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu116
+conda install pillow=6.1
+sudo apt install nvidia-cuda-toolkit
+sudo apt install nvidia-utils-515 
+
 pip install -r requirements.txt
 
-// Download linux driver: https://www.nvidia.com/download/index.aspx?lang=en-us
+
+
+
+
