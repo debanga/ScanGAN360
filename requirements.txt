@@ -17,6 +17,7 @@ jedi==0.17.2
 lasagne==0.1
 networkx==2.4
 numexpr==2.7.1
+numba==0.56.0
 opencv-python==4.1.2.30
 pandas==0.25.3
 parso==0.7.1
