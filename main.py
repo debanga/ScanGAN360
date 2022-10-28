@@ -1,3 +1,4 @@
+#%%
 from __future__ import print_function
 #%matplotlib inline
 import configargparse
@@ -28,8 +29,6 @@ from numba.core.errors import NumbaPerformanceWarning
 import warnings
 warnings.simplefilter('ignore', category=NumbaPerformanceWarning)
 
-
-
 # Import inference module
 from inference import basic_inference
 from train import train
@@ -38,6 +37,35 @@ from discriminator_360 import Discriminator360
 from dataset import SitzmannDataset
 import utils
 
+#%%
+## Test (@debanga)
+
+# Set seed for reproducibility
+rSeed = 13579		
+
+# Establish seed
+print("* Random seed: ", rSeed)
+random.seed(rSeed)
+torch.manual_seed(rSeed)
+
+# Check if we run on GPU or CPU
+device = torch.device("cuda:0" if (torch.cuda.is_available()) else "cpu")
+print("* Working on " + str(device))
+assert str(device) == "cuda:0"
+
+# Instantiate dataset
+sitzmann_dataset = SitzmannDataset()
+dataloader = DataLoader(sitzmann_dataset, batch_size=utils.batch_size, shuffle=True, num_workers=0)
+
+res = sitzmann_dataset.__getitem__(0)
+s  = np.array((res[0][0][0,:,:]+1)*255).astype(int)
+
+p = sitzmann_dataset.points[0][0:1400:2]
+v = [p[i + 1] - p[i] for i in range(len(p)-1)]
+#plt.plot(v[1:100],'-or')
+#plt.show()
+
+#%%
 if __name__ == "__main__":
 
 	# Parse arguments

@@ -10,7 +10,7 @@ image_size = (128, 256)
 random_z = 8 * 16 * 2
 
 # Number of training epochs
-num_epochs = 750
+num_epochs = 10 # original: 750
 
 # Learning rate for optimizers
 lr_d = 1e-5				

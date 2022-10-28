@@ -41,5 +41,4 @@ tifffile==2020.7.17
 torchgan==0.0.5
 torchsummary==1.5.1
 tqdm==4.43.0
-utils==1.0.1
 numba==0.56.0

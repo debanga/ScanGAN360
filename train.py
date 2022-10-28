@@ -19,7 +19,8 @@ from numpy import iscomplexobj
 from numpy.random import random
 from scipy.linalg import sqrtm
 import matplotlib
-matplotlib.use('Agg') # Only to save, not show
+matplotlib.use('QtAgg')
+#matplotlib.use('Agg') # Only to save, not show
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib.cm as cm
@@ -27,6 +28,9 @@ import matplotlib.cm as cm
 import utils
 import copy
 import numba
+
+import sys
+sys.path.append('/home/debanga/Documents/Debanga/SalientEye/ScanGAN360/')
 
 #%%
 # Import similarity measures
@@ -247,7 +251,7 @@ def train(netG, netD, dataloader, criterion, real_label, fake_label, optimizerD,
 			############################
 
 			# Output training stats
-			if i % 500 == 0:
+			if i % 1 == 0:
 				print('Progress --> [%d/%d][%d/%d]\tLoss_D_real: %.4f\tLoss_D_fake: %.4f\tLoss_G: %.4f'
 					  % (epoch, utils.num_epochs, i, len(dataloader),
 						 d_real_loss,d_fake_loss, g_loss))

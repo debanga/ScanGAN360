@@ -38,7 +38,8 @@ class SitzmannDataset():
 		self.image_and_scanpath_dict = {}
 		# Transforms
 		self.transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5], [0.5])])
-
+		# Raw points
+		self.points = []
 		
 		for file_name in os.listdir(self.images_path):
 			if ".png" in file_name:
@@ -69,6 +70,7 @@ class SitzmannDataset():
 					points = [float(p) for p in points]
 
 					# Instead of taking all the >700 points, get only 70 of them.
+					self.points.append(points)
 					points = points[0:1400]
 					_points = []
 					for j in range(0,len(points),48):		#48 for 30
