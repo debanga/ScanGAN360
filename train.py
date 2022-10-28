@@ -1,3 +1,4 @@
+#%%
 from __future__ import print_function
 #%matplotlib inline
 import argparse
@@ -27,12 +28,13 @@ import utils
 import copy
 import numba
 
+#%%
 # Import similarity measures
 from sdtw_loss import SoftDTW
 
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5], [0.5])])
 
-
+#%%
 
 def d_loop(netD, netG, optimizerD, optimizerG, criterion, image, scanpath, device, real_label, fake_label):
     
