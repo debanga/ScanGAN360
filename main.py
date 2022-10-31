@@ -58,10 +58,10 @@ sitzmann_dataset = SitzmannDataset()
 dataloader = DataLoader(sitzmann_dataset, batch_size=utils.batch_size, shuffle=True, num_workers=0)
 
 res = sitzmann_dataset.__getitem__(0)
-s  = np.array((res[0][0][0,:,:]+1)*255).astype(int)
+#s  = np.array((res[0][0][0,:,:]+1)*255).astype(int)
 
-p = sitzmann_dataset.points[0][0:1400:2]
-v = [p[i + 1] - p[i] for i in range(len(p)-1)]
+#p = sitzmann_dataset.points[0][0:1400:2]
+#v = [p[i + 1] - p[i] for i in range(len(p)-1)]
 #plt.plot(v[1:100],'-or')
 #plt.show()
 

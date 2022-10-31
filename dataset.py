@@ -74,6 +74,7 @@ class SitzmannDataset():
 					points = points[0:1400]
 					_points = []
 					for j in range(0,len(points),48):		#48 for 30
+
 						_points.append(points[j])
 						_points.append(points[j+1])
 					
@@ -121,7 +122,7 @@ class SitzmannDataset():
 		o_image = image
 		# print(image.shape)
 
-
+		#print("hello:" + str(len(scanpaths)))
 		res = [[], []]
 		for n_s in range(len(scanpaths)):
 			# Modify each scanpath

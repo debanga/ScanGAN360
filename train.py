@@ -19,8 +19,8 @@ from numpy import iscomplexobj
 from numpy.random import random
 from scipy.linalg import sqrtm
 import matplotlib
-matplotlib.use('QtAgg')
-#matplotlib.use('Agg') # Only to save, not show
+#matplotlib.use('QtAgg')
+matplotlib.use('Agg') # Only to save, not show
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib.cm as cm

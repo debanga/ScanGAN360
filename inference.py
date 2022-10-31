@@ -22,7 +22,7 @@ from matplotlib.animation import FuncAnimation
 import matplotlib.cm as cm
 import matplotlib
 import seaborn as sns
-matplotlib.use('TkAgg')
+# matplotlib.use('TkAgg')
 from scipy import ndimage
 import scipy.stats as st
 
